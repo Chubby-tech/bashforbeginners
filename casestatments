@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+read -p "Example of a primary color? : " color
+
+case $color in
+      blue)
+		echo "Is a primary color ";;
+	green)
+		echo "color green is also a primary color";;
+	red)
+		echo "Color red is great";;
+	black)
+		echo "Black is a not a color, its an attitude";;
+	white)
+		echo "Is just a normal color";;
+        *)
+		echo "The color isnt a primary color ";;
+esac
