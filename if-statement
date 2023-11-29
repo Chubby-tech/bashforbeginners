@@ -1,0 +1,14 @@
+#!/bin/bash
+
+passvar=4
+read -p "Input your password: " passwd
+  if [ $passwd = $passvar ] 
+  then
+	  echo "Your pasword is correct"
+  elif
+	 [ $passwd = $passvar ]
+ then
+	echo " The password is a bit greater than this "
+  else
+	  echo "Password is not correct"
+  fi
