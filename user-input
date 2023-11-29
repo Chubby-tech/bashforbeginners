@@ -1,0 +1,13 @@
+!/bin/bash
+#
+#
+#read -p "what is your name: " namevar
+ #echo "My name is $namevar"
+ #read -sp "Password: " passwd
+  # echo "My password is $passwd"
+func_arg() {
+   echo "the random numer fo today is = $1"
+
+}
+
+func_arg $1
