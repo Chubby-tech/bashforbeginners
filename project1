@@ -1,0 +1,146 @@
+#!/bin/bash
+#
+func_tech(){
+echo "THESE ARE THE TECH COURSES YOU CAN LEARN"
+echo "cloudcomputing
+graphicdesign
+cybersecurity"
+    read -p "What tech course do you wish to dive into?: " techcourse
+    case $techcourse in
+	    cloudcomputing)
+		    echo "Cloud computing is learnin how to manage data in the cloud using AWS or Azure"
+		    read -p "You wish to start now? " startcloud
+		    if
+			    [ $startcloud = yes ]
+		    then
+			    read -p "select date: " datecloud
+			    echo "You shall start by $datecloud"
+		    else
+			    echo "Email us when you are ready"
+		    fi;;
+	    graphicdesign)
+		    echo "Expore adobe photoshop and create amazing graphics"
+		    read -p "Do you wish to start now?: " startgraphic
+		    if 
+			    [ $startgraphic = yes ]
+		    then
+			    read -p "select date: " dategraphic
+			    echo "You shall start by $dategraphic"
+		    else
+			    echo "Email us when you are ready"
+		    fi;;
+	    cybersecurity)
+		    echo "Cyber security is a broad course"
+		    read -p "Do you wish to sumbit your email so that a course outline will be sent to you" coursecyber
+		    if
+			    [ $coursecyber = yes ]
+		    then
+			    echo "A link has been sent to you to navigate you on our website in your mail"
+		    else
+			    echo "Restart the registration later if you wish to learn"
+		    fi;;
+	    *)
+		    echo "We don't actually offer this course."
+		    read -p "Do you wish to send us an email?: " otheremail
+		    case $otheremail in
+			    yes)
+				    echo "This is our email: chubbytech@gmail.com";;
+			    no)
+				    read -p "Write your email address: " emailother;; 
+			    *)
+				    echo "Okay then";;
+		    esac;;
+    esac
+
+}
+#
+
+#
+func_program(){
+echo "Pick out the type of language you will like to learn"
+
+languages=( "Python" "C"  "C++" )
+for j in "${languages[@]}"
+do
+	echo $j
+done
+
+read -p "select the langauage from the list: " selectlang
+
+case $selectlang in
+	Python)
+		echo "You have chosen python"
+		read -p "Do you wish to start now? " startpython
+		if [ $startpython = yes ]
+		then
+			read -p "Select a date: " selectdatepython
+			echo "You start your classes at $selectdatepython"
+		elif
+			read -p "Do you wish to send us an email? " emailpython
+		      [ $emailpython = yes ]
+	      then
+		      echo "Send us email whenever you are ready"
+	      else
+		    echo  "Thanks for choosing python, register again when you are ready"
+		fi;;
+	C)
+		echo "You have chosen to learn the great C programming"
+		read -p "How do you feel learning C? " Cfeel
+                read -p "Do you wish to start now and learn? " startc
+		if
+			[ $startc = yes ]
+		then
+			read -p "select date: " selectdatec
+			echo "You start your classes at $selectdatec"
+		elif
+			read -p " do you wish to send us an email? " emailc
+			[ $emailc = yes ]
+		then
+			echo "Send us the email whenever you are ready"
+		else
+			echo "C is a great tool i wish you should learn it, register agian when you are ready"
+		fi;;
+	C++)   
+		echo "You have chosen to learn C++"
+		read -p "Hope you are exicited? " exictedcplus
+		if 
+			[ $exictedcplus == yes ]
+		then
+		  read -p "  Do you wish to start now? " startplus
+		  if
+			  [ $startplus = yes ]
+		  then
+			read -p "select date: " selectdatecplus
+			echo "Your classes begin at $selectdatecplus"
+                    elif
+			    read -p "Do you wish to send us an email when you are ready? " emailcplus
+			    [ $emailcplus = yes ]
+		    then
+			    echo "Send us an email when you are ready"
+		    else
+			    echo "C++ is a great tool i really wish you should learn it"
+		  fi
+	  else
+	        echo "If you are not excited you can go back and start again"
+		fi
+		read -p "Do you wish to start again? " restartcase;;
+	*)
+		echo "WE DON'T OVER THIS COURSES RIGHT NOW"
+		read -p "Write your email address incase we start: " emailother
+		echo "Done";;
+esac
+}
+#func_progam
+#func_tech
+#
+#this is where the script starts
+echo "WELCOME TO THIS SCRIPT"
+read -p "Do you want to learn programming or other tech: " learn
+if
+	[[ $learn = programming ]]
+then
+	func_program
+else
+	func_tech
+fi
+
